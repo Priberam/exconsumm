@@ -1,4 +1,4 @@
-# Exconsumm
+# ExCoNSumm
 
 (repository under construction)
 
