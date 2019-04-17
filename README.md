@@ -8,4 +8,6 @@ Jointly Extracting and Compressing Documents with Summary State Representations,
 
 Compressive Oracles dataset used in the paper:
 
+```
 wget -r ftp://"ftp.priberam.pt|anonymous"@ftp.priberam.pt/SUMMAPublic/Corpora/Exconsumm/CompressiveOracles/2019.0
+```
