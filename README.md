@@ -1,4 +1,4 @@
-# ExCoNSumm :Jointly Extracting and Compressing Documentswith Summary State Representations
+# Under Construction - please wait# ExCoNSumm :Jointly Extracting and Compressing Documentswith Summary State Representations
 
 This repository releases our code for ExConSum. It uses dynet and the code is in C++.
 
