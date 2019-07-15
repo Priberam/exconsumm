@@ -1,0 +1,38 @@
+Priberam ExCoNSum Summarizer OS Software License Rev. 2019.07
+-----------------------------------------------------------------------------------------------------------------------------------
+Priberam’s Summarizer (“PRODUCT”) is an open-source version of SUMMA’s Summarizer module.
+
+The original certified version of this document can be found at: https://www.priberam.pt/docs/Priberam_ExCoNSum_Summarizer_OS_Software_License.pdf
+-----------------------------------------------------------------------------------------------------------------------------------
+The PRODUCT is free software released under the terms and conditions of the following “3-Clause BSD License”.
+-----------------------------------------------------------------------------------------------------------------------------------
+The 3-Clause BSD License
+
+For Priberam ExCoNSum Summarizer Software
+
+Copyright 2018 by PRIBERAM INFORMÁTICA, S.A. (“PRIBERAM”) (www.priberam.com)
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder (PRIBERAM) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+The PRODUCT uses the following Software whose licenses can be found on folder "LICENSES" and should be read and understood:
+
+  SOFTWARE| FOLDER | OBS.
+
+- dynet | dynet | Copyright © 2009 Gael Guennebaud gael.guennebaud@inria.fr - MPL v2
+
+Please forward any questions about this license or the PRODUCT to:
+
+Priberam Informática, S.A.
+Alameda D. Afonso Henriques, 41 - 2.º
+1000-123 LISBOA
+PORTUGAL
+
+Email: Legal@priberam.com | Phone: +351 21 781 72 60
