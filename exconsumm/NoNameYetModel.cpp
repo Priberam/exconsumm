@@ -886,6 +886,8 @@ bool NoNameYetModel::Train(Corpus& train_corpus, Corpus& dev_corpus, const std::
                     if (pred_loss.first.size() == 0)
                         continue;
 
+                    std::cerr << ".";
+                    losses.push_back(abs_loss);
 
 
                     for (int ia = 0; ia < document->sentences_actions().size(); ia++)
