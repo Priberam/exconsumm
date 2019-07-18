@@ -89,10 +89,7 @@ int main(int argc, char** argv)
   auto this_run = output_path + OSSEP + model_name;
   if (!FileDirectoryExists(this_run.c_str())) {
       CreateFileDirectory(this_run.c_str());
-  } else {
-      std::cout << "Directory already exists !! " << this_run << std::endl;
-      return 0;
-  }
+  } 
 
   output_path = this_run;
  
