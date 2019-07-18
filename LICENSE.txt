@@ -1,6 +1,6 @@
 Priberam ExCoNSum Summarizer OS Software License Rev. 2019.07
 -----------------------------------------------------------------------------------------------------------------------------------
-Priberam’s Summarizer (“PRODUCT”) is an open-source version of SUMMA’s Summarizer module.
+Priberam’s ExCoNSum Summarizer (“PRODUCT”) is an open-source version of SUMMA’s Summarizer module.
 
 The original certified version of this document can be found at: https://www.priberam.pt/docs/Priberam_ExCoNSum_Summarizer_OS_Software_License.pdf
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -10,7 +10,7 @@ The 3-Clause BSD License
 
 For Priberam ExCoNSum Summarizer Software
 
-Copyright 2018 by PRIBERAM INFORMÁTICA, S.A. (“PRIBERAM”) (www.priberam.com)
+Copyright 2019 by PRIBERAM INFORMÁTICA, S.A. (“PRIBERAM”) (www.priberam.com)
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -25,8 +25,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 The PRODUCT uses the following Software whose licenses can be found on folder "LICENSES" and should be read and understood:
 
   SOFTWARE| FOLDER | OBS.
-
-- dynet | dynet | Copyright © 2009 Gael Guennebaud gael.guennebaud@inria.fr - MPL v2
+- dynet   | dynet  | Copyright © 2009 Gael Guennebaud gael.guennebaud@inria.fr - MPL v2
 
 Please forward any questions about this license or the PRODUCT to:
 

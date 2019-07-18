@@ -1,6 +1,9 @@
 ﻿# CMakeList.txt : CMake project for exconsumm, include source and define
 # project specific logic here.
 #
+
+set(CMAKE_CXX_FLAGS "-Wall -std=c++11 -O3 -g")
+
 project(exconsumm)
 cmake_minimum_required (VERSION 3.8)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -DLIBCONFIGXX_EXPORTS -DLIBCONFIG_STATIC")

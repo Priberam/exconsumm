@@ -178,29 +178,14 @@ int main(int argc, char** argv)
           std::cerr << "Fail to load embedings" << std::endl;
           return 0;
       }
-      std::string corpus_type = "Sidenet";
-      if (!config.lookupValue("CorpusType", corpus_type))
-      {
-          std::cerr << "Train path not defined in config" << std::endl;
-          return 0;
-      }
 
-      std::cerr << "Corpus type is " << corpus_type << std::endl;
+
       pba_summarization::GenericCorpus *train_corpus = NULL, *validation_corpus = NULL, *test_corpus = NULL;
 
 
-      if (corpus_type == "Refresh")
-      {
-          train_corpus = new pba_summarization::RefreshCNNDMCorpus(data_model);
-          validation_corpus = new pba_summarization::RefreshCNNDMCorpus(data_model);
-          test_corpus = new pba_summarization::RefreshCNNDMCorpus(data_model);
-
-      }
-      else
-      {
-          std::cerr << "Invalid corpus type !" << std::endl;
-          return 0;
-      }
+      train_corpus = new pba_summarization::RefreshCNNDMCorpus(data_model);
+      validation_corpus = new pba_summarization::RefreshCNNDMCorpus(data_model);
+      test_corpus = new pba_summarization::RefreshCNNDMCorpus(data_model);
 
       if (!train_corpus->LoadFiles(cfg_training))
       {
@@ -223,18 +208,18 @@ int main(int argc, char** argv)
       }
 
 
-      {
-          int nwords = 100000;
-          config.lookupValue("MaxWords", nwords);
-          data_model.limit_words(nwords);
-          data_model.lock();
-          data_model.load_pretrainned_word_embeddings(file_embeddings, embeddings_dim);
-          train_corpus->clear();
-          train_corpus->LoadFiles(cfg_training);
-          validation_corpus->set_keep_words(true);
-          validation_corpus->clear();
-          validation_corpus->LoadFiles(cfg_validation);
-      }
+
+      int nwords = 100000;
+      config.lookupValue("MaxWords", nwords);
+      data_model.limit_words(nwords);
+      data_model.lock();
+      data_model.load_pretrainned_word_embeddings(file_embeddings, embeddings_dim);
+      train_corpus->clear();
+      train_corpus->LoadFiles(cfg_training);
+      validation_corpus->set_keep_words(true);
+      validation_corpus->clear();
+      validation_corpus->LoadFiles(cfg_validation);
+
       model_config->vocab_size((unsigned)data_model.word_embeddings().size());
       model_config->action_size((unsigned)data_model.actions().size());
 
@@ -268,14 +253,8 @@ int main(int argc, char** argv)
   }
   else
   {
-      std::string corpus_type = "Sidenet";
-      if (!config.lookupValue("CorpusType", corpus_type))
-      {
-          std::cerr << "Train path not defined in config" << std::endl;
-          return 0;
-      }
 
-      std::cerr << "Corpus type is " << corpus_type << std::endl;
+
       libconfig::Setting &cfg_test = config.lookup("TestCorpus");
 
       int embeddings_dim = 0;
@@ -299,15 +278,7 @@ int main(int argc, char** argv)
       pba_summarization::GenericCorpus  *test_corpus = NULL;
 
 
-      if (corpus_type == "Refresh")
-      {
-          test_corpus = new pba_summarization::RefreshCNNDMCorpus(data_model);
-      }
-      else
-      {
-          std::cerr << "Invalid corpus type !" << std::endl;
-          return 0;
-      }
+      test_corpus = new pba_summarization::RefreshCNNDMCorpus(data_model);
       test_corpus->set_keep_words(true);
       if (!test_corpus->LoadFiles(cfg_test))
       {

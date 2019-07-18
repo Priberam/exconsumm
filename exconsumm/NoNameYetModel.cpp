@@ -868,6 +868,7 @@ bool NoNameYetModel::Train(Corpus& train_corpus, Corpus& dev_corpus, const std::
                     continue;
                 docs.push_back(std::pair<int, EmbededDocument>(order[si], EmbededDocument()));
                 docs.back().second.m_result_summary_sentence_words.resize(document->sentences().size());
+                encode_document(&hg, *document, m_config->DROPOUT, docs.back().second);
 
             }
 
@@ -880,6 +881,7 @@ bool NoNameYetModel::Train(Corpus& train_corpus, Corpus& dev_corpus, const std::
                 {
                     dynet::Expression abs_loss;
                     std::pair<std::vector<int>, dynet::Expression> pred_loss;
+                    pred_loss = log_prob_parser/*_imitation_learn*/(&hg, *document, &train_corpus, false, &right, d.second, NULL, NULL);
 
                     if (pred_loss.first.size() == 0)
                         continue;
@@ -951,10 +953,9 @@ bool NoNameYetModel::Train(Corpus& train_corpus, Corpus& dev_corpus, const std::
 
                 dynet::ComputationGraph hg;
                 new_graph(&hg);
-
-
-
+                encode_document(&hg, document, false, embed_doc);
                 std::pair<std::vector<int>, dynet::Expression> pred_loss;
+                pred_loss = log_prob_parser (&hg, document, &dev_corpus, true, &right, embed_doc, NULL, NULL);
 
                 std::string  abstractive_summary = "";
 

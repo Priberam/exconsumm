@@ -13,7 +13,7 @@ The datasets and the word emebeddings are the same as for REFRESH except for the
 The Compressive Oracles dataset used in the paper are available at:
 
 ```
-wget -r ftp://"ftp.priberam.pt|anonymous"@ftp.priberam.pt/SUMMAPublic/Corpora/Exconsumm/CompressiveOracles/2019.0
+wget ftp://"ftp.priberam.pt|anonymous"@ftp.priberam.pt/SUMMAPublic/Corpora/Exconsumm/ExCoNSum-CNN-DailyMail-Data.tgz
 ```
 
 ### Training
