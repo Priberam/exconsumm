@@ -31,7 +31,11 @@
 #include "parsectx.h"
 #include "wincompat.h"
 
+#ifdef __APPLE__
+#include <xlocale.h>
+#else
 #include <locale.h>
+#endif
 
 #ifdef HAVE_XLOCALE_H
 #include <xlocale.h>
@@ -86,7 +90,6 @@ static void __config_locale_override(void)
   setlocale(LC_NUMERIC, "C");
 
 #elif defined(__APPLE__)
-
   locale_t loc = newlocale(LC_NUMERIC_MASK, "C", NULL);
   uselocale(loc);
 
