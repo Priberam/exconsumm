@@ -635,8 +635,6 @@ void Document::OutputSummary(const std::vector<int>& sentences_actions, const st
             }
         }
 
-    std::ofstream asumr_file(path + ".asum");
-    asumr_file << abstractive_summary << std::endl;
 }
 
 

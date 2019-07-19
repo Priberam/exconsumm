@@ -194,7 +194,6 @@ int main(int argc, char** argv)
 
       model_config->Logger("csum") << "Output path: " << output_path << std::endl;
       model_config->Logger("gsum") << "Output path: " << output_path << std::endl;
-      model_config->Logger("asum") << "Output path: " << output_path << std::endl;
 
       validation_corpus->set_keep_words(true);
 
@@ -287,7 +286,6 @@ int main(int argc, char** argv)
 
       model_config->Logger("csum") << "Output path: " << output_path << std::endl;
       model_config->Logger("gsum") << "Output path: " << output_path << std::endl;
-      model_config->Logger("asum") << "Output path: " << output_path << std::endl;
 
       model_config->vocab_size((unsigned)data_model.words().m_str_vec.size());
       model_config->action_size((unsigned)data_model.actions().size());
