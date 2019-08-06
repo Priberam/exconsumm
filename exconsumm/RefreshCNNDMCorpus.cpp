@@ -61,7 +61,7 @@ bool RefreshCNNDMCorpus::LoadFiles(libconfig::Setting& config)
         m_valid_file_ids.insert(line);
     }
 
-    std::cerr << " " << m_valid_file_ids.size() << " files";
+    std::cerr << " " << m_valid_file_ids.size() << " files" << std::endl;
     std::cerr <<  "max_docs from " << m_ids_file << " : " << max_docs;
 
     int i = 0;
@@ -298,7 +298,6 @@ bool RefreshCNNDMCorpus::LoadDocument(const std::string& id, Document* doc, bool
        }
     }
 
-    path = m_path + OSSEP + "compressive_oracle" + OSSEP + id + ".compressed_oracle";
     path = m_path + OSSEP + m_oracles_folder + OSSEP + id + ".compressed_oracle";
 
     std::ifstream comp_data_file(path);

@@ -109,7 +109,7 @@ public:
     int BATCH_SIZE = 10;
     bool COMPRESSIVE = false;
     bool COMPRESSIVE_BOW = false;
-    bool ENABLE_REINFORCEMENT_LEARNING = true;
+    bool ENABLE_REINFORCEMENT_LEARNING = false;
     float MAX_RELATION = 2;
     bool USE_ROUGE = false;
     float LEARNING_RATE = 0.001f;
