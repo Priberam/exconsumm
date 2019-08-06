@@ -1,4 +1,8 @@
-# Under Construction - please wait# ExCoNSumm :Jointly Extracting and Compressing Documentswith Summary State Representations
+
+# Under Construction - please wait
+
+# ExCoNSumm :Jointly Extracting and Compressing Documentswith Summary State Representations
+
 
 This repository releases our code for ExConSum. It uses dynet and the code is in C++.
 
@@ -10,7 +14,7 @@ Please contact afonso@priberam.com or sebastiao@priberam.com for any question.
 
 The datasets and the word emebeddings are the same as for REFRESH except for the compressed version. You can get them from https://github.com/EdinburghNLP/Refresh.
 
-The Compressive Oracles dataset used in the paper are available at:
+The Compressive and extactive Oracles dataset used in the paper are available at:
 
 ```
 wget ftp://"ftp.priberam.pt|anonymous"@ftp.priberam.pt/SUMMAPublic/Corpora/Exconsumm/ExCoNSum-CNN-DailyMail-Data.tgz
@@ -18,11 +22,11 @@ wget ftp://"ftp.priberam.pt|anonymous"@ftp.priberam.pt/SUMMAPublic/Corpora/Excon
 
 ### Training
 
-./exconsumm -ccnndm.cfg -t --dynet-autobatch 1 --dynet-mem 7500
+./exconsumm -cconfig/extractive_cnn.cfg -t --dynet-autobatch 1 --dynet-mem 7500
 
 ### Evaluation
 
-./exconsumm -ccnndm.cfg -t --dynet-autobatch 1 --dynet-mem 7500
+./exconsumm -coutput/.cfg  --dynet-autobatch 1 --dynet-mem 7500
 
 ### Build the system
 

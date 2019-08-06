@@ -353,7 +353,7 @@ namespace pba_summarization
             b.push_back(log_probs[i]);
       }
 
-      float rel2 = 1.0f / (a.size() / (float)(pos + 0.01));
+      //float rel2 = 1.0f / (a.size() / (float)(pos + 0.01));
       dynet::Expression tot_neglogprob = -sum(log_probs);
 
       if (a.size() && m_config->MAX_RELATION > 0)
@@ -362,7 +362,7 @@ namespace pba_summarization
 
          float rel = std::min(b.size() / (float)a.size(), m_config->MAX_RELATION);
          if (b.size() > 0)
-            tot_neglogprob = (tot_neglogprob - sum(b) / (float)b.size() * rel*rel2);
+            tot_neglogprob = (tot_neglogprob - sum(b) / (float)b.size() * rel);
       }
       if (m_config->COMPRESSIVE && !is_evaluation && log_probs_compressive.size() > 0)
          tot_neglogprob = tot_neglogprob + sum(log_probs_compressive) / (float)log_probs_compressive.size() * 2;
@@ -688,13 +688,16 @@ namespace pba_summarization
          dynet::Expression r_t = dynet::affine_transform({ abias, p2a, nlp_t });
 
          dynet::Expression adiste = log_softmax(r_t); //, current_valid_actions);
-         std::vector<float> adist = as_vector(hg->incremental_forward(adiste));
-         double best_score = adist[current_valid_actions[0]];
          unsigned best_a = current_valid_actions[0];
-         for (unsigned i = 1; i < current_valid_actions.size(); ++i) {
-            if (adist[current_valid_actions[i]] > best_score) {
-               best_score = adist[current_valid_actions[i]];
-               best_a = current_valid_actions[i];
+
+         if (is_evaluation) {
+            std::vector<float> adist = as_vector(hg->incremental_forward(adiste));
+            double best_score = adist[current_valid_actions[0]];
+            for (unsigned i = 1; i < current_valid_actions.size(); ++i) {
+               if (adist[current_valid_actions[i]] > best_score) {
+                  best_score = adist[current_valid_actions[i]];
+                  best_a = current_valid_actions[i];
+               }
             }
          }
          unsigned action = best_a;
@@ -731,7 +734,7 @@ namespace pba_summarization
          else
             b.push_back(log_probs[i]);
       }
-      dynet::Expression tot_neglogprob = -sum(log_probs) / (float)actions.size() / (1.5);
+      dynet::Expression tot_neglogprob = -sum(log_probs) / (float)actions.size();
 
       if (a.size())
       {
@@ -749,7 +752,7 @@ namespace pba_summarization
          embed_doc.m_result_summary_sentence_words[sentence] = results;
       else
          embed_doc.m_result_summary_sentence_words[sentence] = actions;
-      return std::make_pair(results, tot_neglogprob / (1 + 0.5));
+      return std::make_pair(results, tot_neglogprob);
    }
 
 
