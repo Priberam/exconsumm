@@ -6,7 +6,7 @@
 
 This repository releases our code for ExConSum. It uses dynet and the code is in C++.
 
-Please contact afonso@priberam.com or sebastiao@priberam.com for any question.
+Please contact afonso@priberam.com or sebastiao.miranda@priberam.com for any question.
 
 ### Data
 
